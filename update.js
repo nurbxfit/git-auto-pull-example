@@ -1,6 +1,12 @@
 console.log('Update Script')
 const simpleGit = require('simple-git');
-const fs = require('fs');
+const CronJob = require('cron').CronJob;
+
+//run every One Minute
+const job = new CronJob('*/1 * * * *',()=>{
+    console.log('Cron_running');
+    gitStatus();
+},null,true,'Asia/Kuala_Lumpur');
 
 const git = simpleGit.default();
 
@@ -8,6 +14,7 @@ async function gitPull(){
     await git.pull().then(result=>{
         console.log('GIT-PULL:',result);
     }).catch(error=>{
+        console.log('GIT-PULL-ERROR')
         console.error(error);
     })
 }
@@ -23,5 +30,3 @@ async function gitStatus(){
         console.error(error);
     })
 }
-gitStatus();
-
