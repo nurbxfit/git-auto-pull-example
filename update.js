@@ -20,6 +20,10 @@ async function gitPull(){
 }
 
 async function gitStatus(){
+    await git.fetch().then((result)=>{
+        console.log('GIT-FETCH:',result);
+        console.log('');
+    })
     await git.status().then((result)=>{
         console.log('GIT-STATUS:',result);
         if(result.behind > 0){
