@@ -9,7 +9,7 @@ const job = new CronJob('*/1 * * * *',()=>{
 },null,true,'Asia/Kuala_Lumpur');
 
 const git = simpleGit.default();
-
+//making simple changes to test
 async function gitPull(){
     await git.pull().then(result=>{
         console.log('GIT-PULL:',result);
