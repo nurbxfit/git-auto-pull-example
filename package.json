@@ -19,6 +19,7 @@
   "homepage": "https://github.com/nurbxfit/git-auto-pull-example#readme",
   "dependencies": {
     "cron": "^2.1.0",
+    "shelljs": "^0.8.5",
     "simple-git": "^3.14.1"
   }
 }
